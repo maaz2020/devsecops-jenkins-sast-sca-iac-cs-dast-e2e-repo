@@ -47,11 +47,22 @@ pipeline {
       }
     }
 
-    stage('checkov') {
+        stage('Check PATH') {
       steps {
-        bat("checkov -s -f main.tf")
+        bat "echo %PATH%"
       }
     }
+    stage('Test Checkov') {
+      steps {
+        bat "checkov -v"
+      }
+    }
+
+    // stage('checkov') {
+    //   steps {
+    //     bat("checkov -s -f main.tf")
+    //   }
+    // }
 
   }
 }
