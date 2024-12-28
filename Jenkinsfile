@@ -47,16 +47,25 @@ pipeline {
       }
     }
 
-        stage('Check PATH') {
-      steps {
-        bat "echo %PATH%"
-      }
+    stage('Debug') {
+    steps {
+        bat "where checkov"
+        bat "dir C:\\devops\\tools"
+        bat "dir C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\\Scripts"
     }
-    stage('Test Checkov') {
-      steps {
-        bat "checkov -v"
-      }
-    }
+}
+
+
+    //     stage('Check PATH') {
+    //   steps {
+    //     bat "echo %PATH%"
+    //   }
+    // }
+    // stage('Test Checkov') {
+    //   steps {
+    //     bat "checkov -v"
+    //   }
+    // }
 
     // stage('checkov') {
     //   steps {
