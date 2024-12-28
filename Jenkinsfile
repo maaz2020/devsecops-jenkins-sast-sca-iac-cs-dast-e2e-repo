@@ -47,11 +47,18 @@ pipeline {
       }
     }
 
-    stage('Test Checkov') {
+ stage('Test Checkov') {
     steps {
-        bat "C:\\devops\\tools\\checkov -v"
+        // Ensure to reference the checkov command correctly
+        bat "\"C:\\devops\\tools\\checkov\" -v"
+    }
+    environment {
+        // Use double quotes for paths with spaces
+        PYTHON_HOME = "\"C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\""
+        PATH = "${PYTHON_HOME};${PATH}"
     }
 }
+
 
     // stage('checkov') {
     //   steps {
