@@ -47,21 +47,14 @@ pipeline {
       }
     }
 
-stage('Test Checkov') {
+    stage('Debug') {
     steps {
-        script {
-            // Set the environment variables
-            def pythonHome = "\"C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\""
-            def path = "${pythonHome};${env.PATH}"
-            env.PYTHON_HOME = pythonHome
-            env.PATH = path
-            
-            // Run the checkov command
-            bat "\"C:\\devops\\tools\\checkov\" -v"
-        }
+        bat "echo %PATH%"
+        bat "where python"
+        bat "python --version"
+        bat "where checkov"
     }
 }
-
 
 
     // stage('checkov') {
