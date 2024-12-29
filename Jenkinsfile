@@ -49,7 +49,7 @@ pipeline {
 
     stage('Run Checkov') {
       steps {
-        bat('"C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\checkov" -s -f main.tf')
+        bat('"C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\\python.exe" "C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\checkov" -s -f main.tf')
       }
     }
 
