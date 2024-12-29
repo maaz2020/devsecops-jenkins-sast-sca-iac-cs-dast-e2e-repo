@@ -47,14 +47,14 @@ pipeline {
       }
     }
 
-    stage('Debug') {
+   stage('Debug') {
     steps {
         bat "echo %PATH%"
-        bat "where python"
-        bat "python --version"
-        bat "where checkov"
+        bat "where \"python\""
+        bat "\"C:\\Users\\Maaz Amjad\\AppData\\Local\\Programs\\Python\\Python310\\python\" --version"
     }
 }
+
 
 
     // stage('checkov') {
